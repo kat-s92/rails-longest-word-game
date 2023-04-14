@@ -1,0 +1,15 @@
+<div class='container-main'>
+<h2>Here are your letters:</h2>
+<ul class='letter-list'>
+<%  @letters.each do |letter|  %>
+<li class='letter-list-item'> <%= letter %></li>
+<%end %>
+</ul>
+<form action='/score' method='post' class='form' data-turbo="false"
+><%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= hidden_field_tag :letters, @letters %>
+<input type='text' name='userword' placeholder='Type your word'class='form-input'>
+<input type='submit' class='btn' value='Let&#39s go!'>
+</form>
+<%# <a href="/score" class="btn btn-primary">score page?</a> %>
+</div>

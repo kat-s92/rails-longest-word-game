@@ -1,0 +1,14 @@
+<div class='container-main'>
+<h1>Your Word is:</h1>
+<h1><%= params[:userword].capitalize%></h1>
+<% if @included  %>
+<% if @check_english  %>
+<p>Congrats</p>
+<% else %>
+<p>Sorry, you lose</p>
+<%end %>
+<% else %>
+<p>Sorry, you lose</p>
+<%end %>
+<p><%= link_to 'Start Again', new_path %></p>
+</div>
